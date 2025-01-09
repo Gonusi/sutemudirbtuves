@@ -1,7 +1,7 @@
 /* Defaults */
 :root {
-	--font-family: -apple-system, system-ui, sans-serif;
-	--font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono, Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New, Courier, monospace;
+	--font-family: Georgia, "Times New Roman", Times, serif;
+	--font-family-monospace: Consolas, "Courier New", Courier, monospace;
 }
 
 /* Theme colors */
@@ -31,7 +31,7 @@
 		--text-color-link-active: #6969f7;
 		--text-color-link-visited: #a6a6f8;
 
-		--background-color: #15202b;
+		--background-color: rgb(25,20,24);
 	}
 }
 
@@ -55,6 +55,7 @@ body {
 }
 html {
 	overflow-y: scroll;
+	font-size: 20px;
 }
 body {
 	max-width: 40em;

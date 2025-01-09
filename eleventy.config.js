@@ -52,21 +52,21 @@ export default async function(eleventyConfig) {
 		stylesheet: "pretty-atom-feed.xsl",
 		templateData: {
 			eleventyNavigation: {
-				key: "Feed",
+				key: "RSS",
 				order: 4
 			}
 		},
 		collection: {
-			name: "posts",
+			name: "įrašai",
 			limit: 10,
 		},
 		metadata: {
-			language: "en",
-			title: "Blog Title",
-			subtitle: "This is a longer description about your blog.",
-			base: "https://example.com/",
+			language: "lt",
+			title: "Sutemų dirbtuvės",
+			subtitle: "Pasakos vaikams, ir nevaikams. Apie mūsų kraštą, o kartais - ir tolimus kraštus. ",
+			base: "https://sutemudirbtuves.lt/",
 			author: {
-				name: "Your Name"
+				name: "Kasparas Anusauskas"
 			}
 		}
 	});

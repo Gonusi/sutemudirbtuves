@@ -1,11 +1,11 @@
 export default {
-	title: "Eleventy Base Blog v9",
-	url: "https://example.com/",
-	language: "en",
-	description: "I am writing about my experiences as a naval navel-gazer.",
+	title: "Sutemų Dirbtuvės",
+	url: "https://sutemudirbtuves.lt/",
+	language: "lt",
+	description: "Vakaras geriausias su pasaka. O ypač - apie mūsų kraštą, kur giliuose upelių slėniuose siaučia Pinčiukai, raganos ir paslaptingi žvėrys.",
 	author: {
-		name: "Your Name Here",
-		email: "youremailaddress@example.com",
-		url: "https://example.com/about-me/"
+		name: "Kasparas Anusauskas",
+		email: "kasparasanusauskas@gmail.com",
+		url: "https://sutemudirbtuves.lt/apie"
 	}
 }
