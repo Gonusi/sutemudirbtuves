@@ -76,11 +76,19 @@ body {
 img,
 video,
 iframe {
-  max-width: 100vw;
-	width: 130%;
-	margin-left: -15%;
+  max-width: 100%;
 	margin-bottom: 0.5em;
 	border-radius: 1em;
+	margin-left: 0;
+}
+@media screen and (min-width: 62em) {
+	img,
+	video,
+	iframe {
+		max-width: 100vw;
+		width: 120%;
+		margin-left: -10%;
+	}
 }
 img[width][height] {
   height: auto;
