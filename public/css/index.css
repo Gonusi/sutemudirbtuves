@@ -76,7 +76,11 @@ body {
 img,
 video,
 iframe {
-  max-width: 100%;
+  max-width: 100vw;
+	width: 130%;
+	margin-left: -15%;
+	margin-bottom: 0.5em;
+	border-radius: 1em;
 }
 img[width][height] {
   height: auto;
@@ -271,6 +275,7 @@ header {
 	list-style: none;
 	padding: 0;
 	margin: 0;
+	margin-bottom: 1em;
 }
 .post-metadata time {
 	margin-right: 1em;
