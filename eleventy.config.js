@@ -75,15 +75,15 @@ export default async function(eleventyConfig) {
 	eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
 		// Output formats for each image.
 		formats: ["avif", "webp", "auto"],
-
-		// widths: ["auto"],
+		widths: [960, 1280, 1920],
 
 		htmlOptions: {
 			imgAttributes: {
 				// e.g. <img loading decoding> assigned on the HTML tag will override these values.
 				loading: "lazy",
 				decoding: "async",
-			}
+			},
+
 		},
 
 		sharpOptions: {

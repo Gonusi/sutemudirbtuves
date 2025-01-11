@@ -4,7 +4,7 @@ const eleventyNavigation = {
 	order: 3
 };
 ---
-# About
+# Apie
 
 Ten, kur už balkono lango matosi toliai - ypatinga vieta. Toliuose slepiasi nuotykiai, dideli žygiai ir darbai. Paslaptingi Lietuvą raizgančių upelių slėniai, gilūs šaltiniai, kur smėlyje gali prasmegti. Kreivi medžiai - įrodymai, kad kadaise čia gal būta raganos.
 
@@ -16,5 +16,5 @@ Kai kurios iš pasakų turi ir žemėlapius - savaitgalį galima jais pamėginti
 
 Pabūkite, užsukite vėl - atnaujinimai čia dažni, o dalykai - niekada nebaigti ir gali pasikeisti. O jei esate suaugęs - pažadu, niekas nesužinos, čia visi paskendę sutemose.
 
-Nuoširdžiai,
+Nuoširdžiai jūsų,
 Kasparas
