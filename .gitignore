@@ -2,3 +2,7 @@ _site/
 node_modules/
 package-lock.json
 .cache
+/.idea/.gitignore
+/.idea/modules.xml
+/.idea/sutemudirbtuves.iml
+/.idea/vcs.xml
