@@ -1,25 +1,26 @@
 ---js
 // <script>
 const pagination = {
-	data: "collections",
+	data: "collections.tagList",
 	size: 1,
 	alias: "tag",
-	filter: ["all", "posts"],
 	// addAllPagesToCollections: true,
 };
 
 const eleventyExcludeFromCollections = true;
 
 const eleventyComputed = {
-	title: "Tagged '{{ tag }}'",
 	permalink: function(data) {
 		return `/tags/${this.slugify(data.tag)}/`;
 	}
 };
+
+const title = "tags.taggedTitle";
 ---
-<h1>Žymos “{{ tag }}”</h1>
+<h1>{{ t(title, { tag: tag }) }}</h1>
 
 {% set postslist = collections[ tag ] %}
 {% include "postslist.njk" %}
 
-<p>Peržiūrėkite <a href="tags.njk">visas žymas</a>.</p>
+{% set allTagsLink %}<a href="tags.njk">{{ t("tags.allTagsLink") }}</a>{% endset %}
+<p>{{ t("tags.viewAll", { allTagsLink: allTagsLink }) | safe }}</p>

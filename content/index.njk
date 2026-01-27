@@ -1,14 +1,17 @@
 ---js
 const eleventyNavigation = {
-	key: "Pasakos",
-	order: 1
+	key: "home",
+	order: 1,
+	title: "nav.home"
 };
+
+const title = "home.title";
 
 const numberOfLatestPostsToShow = 50;
 ---
 {% set postsCount = collections.posts | length %}
 {% set latestPostsCount = postsCount | min(numberOfLatestPostsToShow) %}
-<h1>Naujos pasakos</h1>
+<h1>{{ t(title) }}</h1>
 
 {% set postslist = collections.posts | head(-1 * numberOfLatestPostsToShow) %}
 {% set postslistCounter = postsCount %}
@@ -16,7 +19,8 @@ const numberOfLatestPostsToShow = 50;
 
 {% set morePosts = postsCount - numberOfLatestPostsToShow %}
 {% if morePosts > 0 %}
-<p>{{ morePosts }} more post{% if morePosts != 1 %}s{% endif %} can be found in <a href="blog.njk">the archive</a>.</p>
+{% set archiveLink %}<a href="blog.njk">{{ t("home.archiveLink") }}</a>{% endset %}
+<p>{{ t("home.morePosts", { count: morePosts, archiveLink: archiveLink }) | safe }}</p>
 {% endif %}
 
 {# List every content page in the project #}

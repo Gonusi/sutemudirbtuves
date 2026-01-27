@@ -1,7 +1,10 @@
-<h1>Tags</h1>
+---js
+const title = "tags.title";
+---
+<h1>{{ t(title) }}</h1>
 
 <ul>
-{% for tag in collections | getKeys | filterTagList %}
+{% for tag in collections.tagList %}
 	{% set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
 	<li><a href="{{ tagUrl }}" class="post-tag">{{ tag }}</a></li>
 {% endfor %}

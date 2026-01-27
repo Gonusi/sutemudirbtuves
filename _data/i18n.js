@@ -1,0 +1,142 @@
+const messages = {
+	lt: {
+		meta: {
+			title: "Sutemų Dirbtuvės",
+			description: "Vakaras geriausias su pasaka. O ypač - apie mūsų kraštą, kur giliuose upelių slėniuose siaučia Pinčiukai, raganos ir paslaptingi žvėrys. O dar ir Žiurkėdra!",
+			subtitle: "Pasakos vaikams, ir nevaikams. Apie mūsų kraštą, o kartais - ir tolimus kraštus."
+		},
+		nav: {
+			home: "Pasakos",
+			archive: "Archyvas",
+			about: "Apie"
+		},
+		home: {
+			title: "Naujos pasakos",
+			archiveLink: "archyve",
+			morePosts: {
+				one: "Dar {count} pasaka yra {archiveLink}.",
+				few: "Dar {count} pasakos yra {archiveLink}.",
+				many: "Dar {count} pasakų yra {archiveLink}.",
+				other: "Dar {count} pasakų yra {archiveLink}."
+			}
+		},
+		archive: {
+			title: "Archyvas"
+		},
+		tags: {
+			title: "Žymos",
+			taggedTitle: "Žyma „{tag}“",
+			allTagsLink: "visas žymas",
+			viewAll: "Peržiūrėkite {allTagsLink}."
+		},
+		post: {
+			previous: "Ankstesnė",
+			next: "Kita"
+		},
+		a11y: {
+			skip: "Pereiti prie turinio",
+			nav: "Pagrindinis navigacijos meniu"
+		},
+		footer: {
+			copyright: "Kasparo Anusausko pasakos ©."
+		},
+		feed: {
+			collectionName: "įrašai"
+		}
+	},
+	en: {
+		meta: {
+			title: "Twilight Workshops",
+			description: "Evenings are best with a tale—especially about our land, where deep stream valleys hide Pinčiukai, witches, and mysterious beasts. And Ratsnack!",
+			subtitle: "Tales for children—and not only children. About our land, and sometimes faraway lands."
+		},
+		nav: {
+			home: "Tales",
+			archive: "Archive",
+			about: "About"
+		},
+		home: {
+			title: "New tales",
+			archiveLink: "the archive",
+			morePosts: {
+				one: "{count} more post can be found in {archiveLink}.",
+				other: "{count} more posts can be found in {archiveLink}."
+			}
+		},
+		archive: {
+			title: "Archive"
+		},
+		tags: {
+			title: "Tags",
+			taggedTitle: "Tagged “{tag}”",
+			allTagsLink: "all tags",
+			viewAll: "Browse {allTagsLink}."
+		},
+		post: {
+			previous: "Previous",
+			next: "Next"
+		},
+		a11y: {
+			skip: "Skip to main content",
+			nav: "Top level navigation menu"
+		},
+		footer: {
+			copyright: "Tales by Kasparas Anusauskas ©."
+		},
+		feed: {
+			collectionName: "posts"
+		}
+	}
+};
+
+const defaultLang = "lt";
+
+const getMessage = (langMessages, key) => {
+	if(!langMessages) {
+		return null;
+	}
+	return key.split(".").reduce((acc, part) => (acc && acc[part] !== undefined ? acc[part] : null), langMessages);
+};
+
+const format = (template, vars) => {
+	if(typeof template !== "string") {
+		return template;
+	}
+	return template.replace(/\{(\w+)\}/g, (match, key) => {
+		if(vars && Object.prototype.hasOwnProperty.call(vars, key)) {
+			return String(vars[key]);
+		}
+		return match;
+	});
+};
+
+const resolveMessage = (lang, key, vars) => {
+	const langMessages = messages[lang] || messages[defaultLang];
+	const message = getMessage(langMessages, key);
+	if(message && typeof message === "object") {
+		if(vars && typeof vars.count === "number") {
+			const rule = new Intl.PluralRules(lang).select(vars.count);
+			const pluralMessage = message[rule] || message.other || message.one || message.few || message.many;
+			return format(pluralMessage, vars);
+		}
+		const fallbackMessage = message.other || message.one || message.few || message.many;
+		return format(fallbackMessage || key, vars);
+	}
+	return format(message || key, vars);
+};
+
+const createI18n = (lang) => {
+	const resolvedLang = messages[lang] ? lang : defaultLang;
+	return {
+		lang: resolvedLang,
+		messages,
+		t: (key, vars) => resolveMessage(resolvedLang, key, vars),
+	};
+};
+
+export default function() {
+	const lang = process.env.ELEVENTY_LANG || defaultLang;
+	return createI18n(lang);
+}
+
+export { createI18n };

@@ -3,6 +3,7 @@ export default {
 		"posts"
 	],
 	"layout": "layouts/post.njk",
+	lang: "lt",
 	permalink: (data) => {
 		const title = typeof data.title === "string" && data.title.trim().length > 0
 			? data.title.trim()

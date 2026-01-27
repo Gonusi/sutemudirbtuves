@@ -1,10 +1,15 @@
 ---js
 const eleventyNavigation = {
-	key: "Apie",
-	order: 3
+	key: "about",
+	order: 3,
+	title: "nav.about"
 };
+
+const title = "Apie";
+const lang = "lt";
+const permalink = "/about/";
 ---
-# Apie
+# {{ title }}
 
 Ten, kur už balkono lango matosi toliai - ypatinga vieta. Toliuose slepiasi nuotykiai, dideli žygiai ir darbai. Paslaptingi Lietuvą raizgančių upelių slėniai, gilūs šaltiniai, kur smėlyje gali prasmegti. Kreivi medžiai - įrodymai, kad kadaise čia gal būta raganos.
 

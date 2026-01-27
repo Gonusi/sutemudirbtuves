@@ -5,12 +5,27 @@ import pluginNavigation from "@11ty/eleventy-navigation";
 import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
 
 import pluginFilters from "./_config/filters.js";
+import getMetadata from "./_data/metadata.js";
+import { createI18n } from "./_data/i18n.js";
+
+const defaultLang = "lt";
+const supportedLangs = new Set(["lt", "en"]);
+const envLang = process.env.ELEVENTY_LANG;
+const buildLang = supportedLangs.has(envLang) ? envLang : defaultLang;
+const i18n = createI18n(buildLang);
+const siteMetadata = getMetadata();
 
 export default async function(eleventyConfig) {
+	eleventyConfig.addNunjucksGlobal("t", (key, vars) => i18n.t(key, vars));
+
 	// Drafts/todos, see also _data/eleventyDataSchema.js
 	eleventyConfig.addPreprocessor("drafts", "*", (data, content) => {
 		if(data.draft || data.todo) {
 			data.eleventyExcludeFromCollections = true;
+		}
+		if(data.lang && data.lang !== buildLang) {
+			data.eleventyExcludeFromCollections = true;
+			return false;
 		}
 		if((data.draft || data.todo) && process.env.ELEVENTY_RUN_MODE === "build") {
 			return false;
@@ -60,17 +75,15 @@ export default async function(eleventyConfig) {
 			}
 		},
 		collection: {
-			name: "įrašai",
+			name: i18n.t("feed.collectionName"),
 			limit: 10,
 		},
 		metadata: {
-			language: "lt",
-			title: "Sutemų dirbtuvės",
-			subtitle: "Pasakos vaikams, ir nevaikams. Apie mūsų kraštą, o kartais - ir tolimus kraštus. ",
-			base: "https://sutemudirbtuves.lt/",
-			author: {
-				name: "Kasparas Anusauskas"
-			}
+			language: siteMetadata.language,
+			title: siteMetadata.title,
+			subtitle: siteMetadata.subtitle,
+			base: siteMetadata.url,
+			author: siteMetadata.author
 		}
 	});
 
@@ -96,6 +109,19 @@ export default async function(eleventyConfig) {
 
 	// Filters
 	eleventyConfig.addPlugin(pluginFilters);
+
+	eleventyConfig.addCollection("tagList", (collectionApi) => {
+		const tagSet = new Set();
+		collectionApi.getFilteredByTag("posts").forEach((item) => {
+			(item.data.tags || []).forEach((tag) => {
+				if(tag === "all" || tag === "posts") {
+					return;
+				}
+				tagSet.add(tag);
+			});
+		});
+		return Array.from(tagSet).sort();
+	});
 
 	eleventyConfig.addPlugin(IdAttributePlugin, {
 		// by default we use Eleventy’s built-in `slugify` filter:
@@ -138,7 +164,7 @@ export const config = {
 		input: "content",          // default: "."
 		includes: "../_includes",  // default: "_includes" (`input` relative)
 		data: "../_data",          // default: "_data" (`input` relative)
-		output: "_site"
+		output: process.env.ELEVENTY_OUTPUT_DIR || "_site"
 	},
 
 	// -----------------------------------------------------------------

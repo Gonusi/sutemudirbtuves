@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet href="pretty-atom-feed.xsl" type="text/xsl"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="lt">
+  <title>Sutemų Dirbtuvės</title>
+  <subtitle>Pasakos vaikams, ir nevaikams. Apie mūsų kraštą, o kartais - ir tolimus kraštus.</subtitle>
+  <link href="https://sutemudirbtuves.lt/feed/feed.xml" rel="self" />
+  <link href="https://sutemudirbtuves.lt/" />
+  <updated>2026-01-27T09:56:24Z</updated>
+  <id>https://sutemudirbtuves.lt/</id>
+  <author>
+    <name>Kasparas Anusauskas</name>
+    <email>kasparasanusauskas@gmail.com</email>
+  </author>
+</feed>
