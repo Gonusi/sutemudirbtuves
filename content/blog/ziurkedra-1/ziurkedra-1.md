@@ -3,6 +3,8 @@ title: Žiurkėdra ir nemalonus nutikimas
 description: Apie tai, kaip pasaulyje gyveno Žiurkėdra, ir kodėl jos visi kiek bijojo.
 date: 2026-01-21
 tags: ['pasaka', 'Žiurkėdra']
+draft: true
+lang: 'lt'
 ---
 
 Ir štai atėjo vasara! O groži, kaip žaliavo pievos, o kalnai buvo melsvesni nei bet kada. Žiurkėdra pabudo savo iš tvirtų lentų susuktoje medžio lovytėje. Pasidėjo nosį ant antros pagalvės.. pirmą kartą metuose buvo tikrai šilta - taip, kad pagalvė snukį maloniai vėsino. Ūsai sujudėjo nuo vėjo gūsio atnešusio tolimos upės kvapus. 
