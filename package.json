@@ -7,7 +7,7 @@
 		"build": "npm run build:all",
 		"build:lt": "cross-env ELEVENTY_LANG=lt ELEVENTY_OUTPUT_DIR=_site_lt npx @11ty/eleventy",
 		"build:en": "cross-env ELEVENTY_LANG=en ELEVENTY_OUTPUT_DIR=_site_en npx @11ty/eleventy",
-		"build:all": "npm run images:resize && npm run build:lt && npm run build:en",
+		"build:all": "npm run build:lt && npm run build:en",
 		"build-nocolor": "cross-env NODE_DISABLE_COLORS=1 npx @11ty/eleventy",
 		"build-ghpages": "npx @11ty/eleventy --pathprefix=/eleventy-base-blog/",
 		"images:cleanup": "node scripts/remove-originals-with-resized.cjs",
