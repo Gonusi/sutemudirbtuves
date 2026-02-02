@@ -6,7 +6,7 @@ tags: ['tale', 'Pinciukas']
 lang: 'en'
 ---
 
-<img src="./pinciuko-paslaptis-2021.jpg" alt="Original drawing of the place where the last Pinciukas of the Vilnius region was born (and later disappeared)">
+<img src="./pinciuko-paslaptis-2021.resized.jpg" alt="Original drawing of the place where the last Pinciukas of the Vilnius region was born (and later disappeared)">
 
 He was born a thousand years ago, in a special place. Right at the edge of the human world. Perhaps that is why he was different. Half human, half something else entirely.
 

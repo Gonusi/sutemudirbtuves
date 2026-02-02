@@ -5,7 +5,7 @@ date: 2025-01-09
 tags: ['pasaka', 'pinčiukas']
 ---
 
-<img src="./pinciuko-paslaptis-2021.jpg" alt="Originalus piešinys su vieta, kur gimė (ir paskui dingo) paskutinis iš Vilniaus krašto Pinčiukų">
+<img src="./pinciuko-paslaptis-2021.resized.jpg" alt="Originalus piešinys su vieta, kur gimė (ir paskui dingo) paskutinis iš Vilniaus krašto Pinčiukų">
 
 Gimė jis prieš tūkstantį metų, ypatingoje vietoje. Ties pat žmogaus pasaulio riba. Turbūt todėl ir gimė kitoks. Pusiau žmogus, pusiau kažkas visai kito.
 
