@@ -294,4 +294,14 @@ header {
 .post-metadata time {
 	margin-right: 1em;
 }
-
+.post-translation-note {
+	margin-top: 2rem;
+	font-size: 0.85em;
+	color: var(--color-gray-200);
+}
+.post-translation-note a {
+	color: inherit;
+}
+.post-translation-note a:visited {
+	color: inherit;
+}

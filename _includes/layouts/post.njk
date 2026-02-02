@@ -16,6 +16,10 @@ layout: layouts/base.njk
 
 {{ content | safe }}
 
+{%- if lang == "en" %}
+<p class="post-translation-note">Translated from the Lithuanian original at <a href="https://sutemudirbtuves.lt">https://sutemudirbtuves.lt</a></p>
+{%- endif %}
+
 {%- if collections.posts %}
 {%- set previousPost = collections.posts | getPreviousCollectionItem %}
 {%- set nextPost = collections.posts | getNextCollectionItem %}
