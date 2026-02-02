@@ -254,8 +254,8 @@ header {
 }
 .postlist-thumb {
 	display: block;
-	flex: 0 0 33%;
-	max-width: 33%;
+	flex: 0 1 480px;
+	max-width: 480px;
 	aspect-ratio: 4 / 3;
 	text-decoration: none;
 }

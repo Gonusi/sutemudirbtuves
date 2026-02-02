@@ -88,7 +88,16 @@ export default async function(eleventyConfig) {
 	});
 
 	// Image optimization: https://www.11ty.dev/docs/plugins/image/#eleventy-transform
-	eleventyConfig.addPlugin(eleventyImageTransformPlugin);
+	eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
+		widths: [480, 960, 1920],
+		htmlOptions: {
+			imgAttributes: {
+				sizes: "(max-width: 62em) 100vw, 960px",
+				loading: "lazy",
+				decoding: "async",
+			},
+		},
+	});
 
 	// Filters
 	eleventyConfig.addPlugin(pluginFilters);
