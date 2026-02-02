@@ -7,6 +7,9 @@ const messages = {
 		},
 		nav: {
 			home: "Pasakos",
+			tales: "Pasakos",
+			maps: "Žemėlapiai",
+			diary: "Dienoraštis",
 			archive: "Archyvas",
 			about: "Apie"
 		},
@@ -22,6 +25,17 @@ const messages = {
 		},
 		archive: {
 			title: "Archyvas"
+		},
+		tales: {
+			title: "Pasakos"
+		},
+		maps: {
+			title: "Žemėlapiai",
+			intro: "Čia bus pasakų žemėlapiai."
+		},
+		diary: {
+			title: "Dienoraštis",
+			intro: "Čia bus dienoraščio įrašai."
 		},
 		tags: {
 			title: "Žymos",
@@ -52,6 +66,9 @@ const messages = {
 		},
 		nav: {
 			home: "Tales",
+			tales: "Tales",
+			maps: "Maps",
+			diary: "Diary",
 			archive: "Archive",
 			about: "About"
 		},
@@ -65,6 +82,17 @@ const messages = {
 		},
 		archive: {
 			title: "Archive"
+		},
+		tales: {
+			title: "Tales"
+		},
+		maps: {
+			title: "Maps",
+			intro: "Tale maps will live here."
+		},
+		diary: {
+			title: "Diary",
+			intro: "Diary entries will live here."
 		},
 		tags: {
 			title: "Tags",

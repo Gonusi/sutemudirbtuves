@@ -1,10 +1,4 @@
 ---js
-const eleventyNavigation = {
-	key: "home",
-	order: 1,
-	title: "nav.home"
-};
-
 const title = "home.title";
 
 const numberOfLatestPostsToShow = 50;
@@ -19,7 +13,7 @@ const numberOfLatestPostsToShow = 50;
 
 {% set morePosts = postsCount - numberOfLatestPostsToShow %}
 {% if morePosts > 0 %}
-{% set archiveLink %}<a href="blog.njk">{{ t("home.archiveLink") }}</a>{% endset %}
+{% set archiveLink %}<a href="tales.njk">{{ t("home.archiveLink") }}</a>{% endset %}
 <p>{{ t("home.morePosts", { count: morePosts, archiveLink: archiveLink }) | safe }}</p>
 {% endif %}
 

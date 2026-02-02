@@ -3,6 +3,7 @@ title: The Secret of Pinciukas
 description: A short tale about how Pinciukas left our world, still misunderstood by people.
 date: 2025-01-09
 tags: ['tale', 'Pinciukas']
+thumb: "./pinciuko-paslaptis-2021.resized.jpg"
 lang: 'en'
 ---
 
@@ -19,4 +20,3 @@ The night's hound yelped nervously when he tugged the reins, and the cart stoppe
 "I'll just dip my tired feet into the water," he whispered aloud. Old ferns swayed in the dark palms of the morning breeze, and the endless depth sighed softly.
 
 And perhaps no one will ever know what secrets it hid. But people say that the last of our Pinciukai disappeared there. And in the world there are always more secrets than answers - that is what he himself used to say.
-

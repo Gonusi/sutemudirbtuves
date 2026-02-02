@@ -3,6 +3,7 @@ title: The Spider's End
 description: About how the Spider almost ended himself, but in doing so saw the beauty of the world.
 date: 2025-01-11
 tags: ['tale', 'spider']
+thumb: "./voro-galas-1.resized.jpg"
 lang: 'en'
 ---
 
@@ -23,4 +24,3 @@ The spider lowered himself down the pine on a thread and, puffing through the sn
 <img src="./voro-galas-4.resized.jpg" alt="The spider's love, the scarecrow spideress">
 
 The little spider was a truly monstrous - the spider fell in love with her at once. He was no longer alone, and it grew even more cheerful. So ... the spider went on living happily, and very soon, summer came.
-
