@@ -3,6 +3,7 @@ title: Pinčiuko paslaptis
 description: Trumpa pasaka apie tai, kaip Pinčiukas paliko mūsų pasaulį, taip ir nesuprastas žmonių.
 date: 2025-01-09
 tags: ['pasaka', 'pinčiukas']
+thumb: "./pinciuko-paslaptis-2021.resized.jpg"
 ---
 
 <img src="./pinciuko-paslaptis-2021.resized.jpg" alt="Originalus piešinys su vieta, kur gimė (ir paskui dingo) paskutinis iš Vilniaus krašto Pinčiukų">

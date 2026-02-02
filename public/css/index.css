@@ -229,21 +229,11 @@ header {
 }
 .postlist-item {
 	display: flex;
-	flex-wrap: wrap;
-	align-items: baseline;
-	counter-increment: start-from -1;
+	align-items: flex-start;
+	gap: 1em;
 	margin-bottom: 1em;
 }
-.postlist-item:before {
-	display: inline-block;
-	pointer-events: none;
-	content: "" counter(start-from, decimal-leading-zero) ". ";
-	line-height: 100%;
-	text-align: right;
-	margin-left: -1.5rem;
-}
-.postlist-date,
-.postlist-item:before {
+.postlist-date {
 	font-size: 0.8125em; /* 13px /16 */
 	color: var(--color-gray-90);
 }
@@ -258,12 +248,38 @@ header {
 .postlist-link {
 	font-size: 1.1875em; /* 19px /16 */
 	font-weight: 700;
-	flex-basis: calc(100% - 1.5rem);
-	padding-left: .25em;
-	padding-right: .5em;
 	text-underline-position: from-font;
 	text-underline-offset: 0;
 	text-decoration-thickness: 1px;
+}
+.postlist-thumb {
+	display: block;
+	flex: 0 0 33%;
+	max-width: 33%;
+	aspect-ratio: 4 / 3;
+	text-decoration: none;
+}
+.postlist-thumb img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-radius: 0.5em;
+}
+.postlist-body {
+	flex: 1 1 auto;
+	min-width: 0;
+}
+@media screen and (max-width: 40em) {
+	.postlist-item {
+		flex-wrap: wrap;
+	}
+	.postlist-thumb {
+		flex-basis: 100%;
+		max-width: 100%;
+	}
+	.postlist-body {
+		flex-basis: 100%;
+	}
 }
 .postlist-item-active .postlist-link {
 	font-weight: bold;

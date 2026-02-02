@@ -1,4 +1,5 @@
 import { DateTime } from "luxon";
+import path from "node:path";
 
 export default function(eleventyConfig) {
 	eleventyConfig.addFilter("readableDate", (dateObj, format, zone) => {
@@ -35,6 +36,21 @@ export default function(eleventyConfig) {
 
 	eleventyConfig.addFilter("filterTagList", function filterTagList(tags) {
 		return (tags || []).filter(tag => ["all", "posts"].indexOf(tag) === -1);
+	});
+
+	eleventyConfig.addFilter("resolveThumb", (post) => {
+		const thumb = post?.data?.thumb;
+		if (!thumb || typeof thumb !== "string") return null;
+		if (/^https?:\/\//i.test(thumb)) return thumb;
+		if (thumb.startsWith("/")) return thumb;
+
+		const filePathStem = post?.data?.page?.filePathStem;
+		if (!filePathStem) return thumb;
+
+		const cleaned = thumb.startsWith("./") ? thumb.slice(2) : thumb;
+		if (!cleaned) return null;
+
+		return path.posix.join(path.posix.dirname(filePathStem), cleaned);
 	});
 
 };
