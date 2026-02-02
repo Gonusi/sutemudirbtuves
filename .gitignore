@@ -1,4 +1,6 @@
 _site/
+_site_en/
+_site_lt/
 node_modules/
 .cache
 /.idea/.gitignore
