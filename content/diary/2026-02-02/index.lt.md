@@ -16,4 +16,6 @@ Kadangi stengiuosi išmokti piešti rašalu (Lietuvoje dar vadina "tušu"), tai 
 
 Deja ne pirmą kartą pasimokau, kad nesistengiant rezultatas gaunasi visai ne toks, o tos lengvabūdiškai atrodytos linijos autorių knygelėse iš tiesų yra daugybės metų įgūdžių rezultatas, ir visai nėra atliktos be pastangų :) 
 
-Bet šiaip - esu patenkintas kad pradėjau. 
+Na, bet esu patenkintas bendra kompozicija, o ir žuvies viršutinė dalis pavyko neblogai, ten linijos tokios, kaip ir norėčiau.
+
+Ir aišku - gerai, kad pradėjau. 

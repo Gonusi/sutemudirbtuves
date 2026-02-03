@@ -15,4 +15,6 @@ Since I'm trying to learn ink, drew the theme of the day - the "Dusky Batfish" u
 
 Note the wildly uneven shading on the outline of the fish - if I already decided to do it, I should have done it properly. Should have used more precise, determined strokes  (even if the intention is "a rough, uneven look"). Will take more care next time. 
 
+I like the top part of the fish though where the lines are nice, and also happy with the general composition. 
+
 Other than that, I'm happy to have started posting. 
