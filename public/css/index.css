@@ -235,7 +235,7 @@ header {
 .postlist {
 	list-style: none;
 	padding: 0;
-	padding-left: 1.5rem;
+	padding-left: 0;
 }
 .postlist-item {
 	display: flex;

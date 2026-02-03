@@ -20,14 +20,15 @@ export default async function(eleventyConfig) {
 
 	// Drafts/todos, see also _data/eleventyDataSchema.js
 	eleventyConfig.addPreprocessor("drafts", "*", (data, content) => {
-		if(data.draft || data.todo) {
-			data.eleventyExcludeFromCollections = true;
-		}
+		const isDraft = data.draft || data.todo;
+
 		if(data.lang && data.lang !== buildLang) {
 			data.eleventyExcludeFromCollections = true;
 			return false;
 		}
-		if((data.draft || data.todo) && process.env.ELEVENTY_RUN_MODE === "build") {
+
+		if(isDraft && process.env.ELEVENTY_RUN_MODE === "build") {
+			data.eleventyExcludeFromCollections = true;
 			return false;
 		}
 	});
