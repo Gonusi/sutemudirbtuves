@@ -1,6 +1,6 @@
 ---
 title: The Spider's End
-description: About how the Spider almost ended himself, but in doing so saw the beauty of the world.
+description: About how the Spider almost reached his end, but in doing so saw the beauty of the world.
 date: 2025-01-11
 tags: ['tale', 'spider']
 thumb: "./voro-galas-1.resized.jpg"
@@ -19,8 +19,8 @@ The pine was very tall - the spider climbed it for more than a day while a blizz
 
 <img src="./voro-galas-3.resized.jpg" alt="The spider sees how beautiful the world is">
 
-The spider lowered himself down the pine on a thread and, puffing through the snow, hurried to the riverside cottage. Luckily he had bought warm boots back in spring. In a corner between the stove and an old barrel he met a little spider.
+The spider lowered himself down the pine on a thread and, puffing through the snow, hurried to the riverside cottage. Luckily he had bought warm boots back in spring. In a corner between the stove and an old barrel he met a little Spider-Lady. 
 
 <img src="./voro-galas-4.resized.jpg" alt="The spider's love, the scarecrow spideress">
 
-The little spider was a truly monstrous - the spider fell in love with her at once. He was no longer alone, and it grew even more cheerful. So ... the spider went on living happily, and very soon, summer came.
+The Spider-Lady was a truly a a monster - the Spider fell in love with her at once. He was no longer alone, and it grew even more cheerful. So ... the Spider went on living happily, and very soon, summer came.
