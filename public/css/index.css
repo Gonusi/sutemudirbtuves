@@ -231,6 +231,21 @@ header {
 	text-decoration: underline;
 }
 
+/* Subscribe */
+.subscribe-form {
+	margin-top: 1.5rem;
+}
+.subscribe-placeholder {
+	padding: 1rem;
+	border: 1px dashed var(--color-gray-20);
+	border-radius: 0.75rem;
+	color: var(--color-gray-200);
+	font-style: italic;
+}
+.subscribe-placeholder p {
+	margin: 0;
+}
+
 /* Posts list */
 .postlist {
 	list-style: none;

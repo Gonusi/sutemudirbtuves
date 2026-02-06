@@ -1,0 +1,24 @@
+<div class="subscribe-form">
+	{%- if mailerLite and mailerLite.forms %}
+		{%- set formId = mailerLite.forms[lang] or mailerLite.forms.lt %}
+		{%- if formId %}
+			<div class="ml-embedded" data-form="{{ formId }}"></div>
+		{%- else %}
+			<div class="subscribe-placeholder">
+				{%- if lang == "lt" %}
+					<p>Prenumeratos forma bus čia.</p>
+				{%- else %}
+					<p>The subscription form will appear here.</p>
+				{%- endif %}
+			</div>
+		{%- endif %}
+	{%- else %}
+		<div class="subscribe-placeholder">
+			{%- if lang == "lt" %}
+				<p>Prenumeratos forma bus čia.</p>
+			{%- else %}
+				<p>The subscription form will appear here.</p>
+			{%- endif %}
+		</div>
+	{%- endif %}
+</div>

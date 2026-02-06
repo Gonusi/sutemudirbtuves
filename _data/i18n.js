@@ -11,7 +11,8 @@ const messages = {
 			maps: "Žemėlapiai",
 			diary: "Dienoraštis",
 			archive: "Archyvas",
-			about: "Apie"
+			about: "Apie",
+			subscribe: "Prenumerata"
 		},
 		home: {
 			title: "Naujos pasakos",
@@ -60,9 +61,9 @@ const messages = {
 	},
 	en: {
 		meta: {
-			title: "Twilight Workshops",
-			description: "Evenings are best with a tale—especially about our land, where deep stream valleys hide Pinčiukai, witches, and mysterious beasts. And Ratsnack!",
-			subtitle: "Tales for children—and not only children. About our land, and sometimes faraway lands."
+			title: "Twilight Workshop",
+			description: "Evenings are best spent with a tale — about deep valleys ravaged by hidden streams, witches, trolls and mysterious beasts. And Ratsnack!",
+			subtitle: "Tales from Lithuania, for children and those who are ...mostly grown up."
 		},
 		nav: {
 			home: "Tales",
@@ -70,7 +71,8 @@ const messages = {
 			maps: "Maps",
 			diary: "Diary",
 			archive: "Archive",
-			about: "About"
+			about: "About",
+			subscribe: "Subscribe"
 		},
 		home: {
 			title: "New tales",
@@ -109,7 +111,7 @@ const messages = {
 			nav: "Top level navigation menu"
 		},
 		footer: {
-			copyright: "Tales by Kasparas Anusauskas ©."
+			copyright: "Tales by Kasparas Anusauskas ©. (AKA /u/rat_at_twilight)"
 		},
 		feed: {
 			collectionName: "posts"
