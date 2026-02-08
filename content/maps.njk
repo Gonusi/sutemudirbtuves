@@ -10,3 +10,6 @@ const intro = "maps.intro";
 ---
 <h1>{{ t(title) }}</h1>
 <p>{{ t(intro) }}</p>
+
+{% set postslist = collections.map or collections.maps or [] %}
+{% include "postslist.njk" %}
