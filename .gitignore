@@ -7,3 +7,4 @@ node_modules/
 /.idea/modules.xml
 /.idea/sutemudirbtuves.iml
 /.idea/vcs.xml
+.DS_Store
