@@ -11,5 +11,5 @@ const intro = "diary.intro";
 <h1>{{ t(title) }}</h1>
 <p>{{ t(intro) }}</p>
 
-{% set postslist = collections.diary %}
+{% set postslist = collections.diaryEntries or [] %}
 {% include "postslist.njk" %}

@@ -20,9 +20,9 @@ layout: layouts/base.njk
 <p class="post-translation-note">Translated from the Lithuanian original at <a href="https://sutemudirbtuves.lt">https://sutemudirbtuves.lt</a></p>
 {%- endif %}
 
-{%- if collections.posts %}
-{%- set previousPost = collections.posts | getPreviousCollectionItem %}
-{%- set nextPost = collections.posts | getNextCollectionItem %}
+{%- if collections.tales %}
+{%- set previousPost = collections.tales | getPreviousCollectionItem %}
+{%- set nextPost = collections.tales | getNextCollectionItem %}
 {%- if nextPost or previousPost %}
 <ul class="links-nextprev">
 	{%- if previousPost %}<li class="links-nextprev-prev">← {{ t("post.previous") }}<br> <a href="{{ previousPost.url }}">{{ previousPost.data.title }}</a></li>{% endif %}

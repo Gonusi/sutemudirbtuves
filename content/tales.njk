@@ -9,5 +9,5 @@ const title = "tales.title";
 ---
 <h1>{{ t(title) }}</h1>
 
-{% set postslist = collections.posts %}
+{% set postslist = collections.tales or [] %}
 {% include "postslist.njk" %}

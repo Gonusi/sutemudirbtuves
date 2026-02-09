@@ -103,9 +103,28 @@ export default async function(eleventyConfig) {
 	// Filters
 	eleventyConfig.addPlugin(pluginFilters);
 
+	const isInContentSubdir = (item, subdir) => {
+		return typeof item.inputPath === "string" && item.inputPath.startsWith(`./content/${subdir}/`);
+	};
+
+	eleventyConfig.addCollection("tales", (collectionApi) => {
+		return collectionApi.getAll().filter((item) => isInContentSubdir(item, "tales"));
+	});
+
+	eleventyConfig.addCollection("diaryEntries", (collectionApi) => {
+		return collectionApi.getAll().filter((item) => isInContentSubdir(item, "diary"));
+	});
+
+	eleventyConfig.addCollection("maps", (collectionApi) => {
+		return collectionApi.getAll().filter((item) => isInContentSubdir(item, "maps"));
+	});
+
 	eleventyConfig.addCollection("tagList", (collectionApi) => {
 		const tagSet = new Set();
-		collectionApi.getFilteredByTag("posts").forEach((item) => {
+		collectionApi.getAll().forEach((item) => {
+			if(!isInContentSubdir(item, "tales") && !isInContentSubdir(item, "diary") && !isInContentSubdir(item, "maps")) {
+				return;
+			}
 			(item.data.tags || []).forEach((tag) => {
 				if(tag === "all" || tag === "posts") {
 					return;

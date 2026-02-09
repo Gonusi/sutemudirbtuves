@@ -3,11 +3,12 @@ const title = "home.title";
 
 const numberOfLatestPostsToShow = 50;
 ---
-{% set postsCount = collections.posts | length %}
+{% set allTales = collections.tales or [] %}
+{% set postsCount = allTales | length %}
 {% set latestPostsCount = postsCount | min(numberOfLatestPostsToShow) %}
 <h1>{{ t(title) }}</h1>
 
-{% set postslist = collections.posts | head(-1 * numberOfLatestPostsToShow) %}
+{% set postslist = allTales | head(-1 * numberOfLatestPostsToShow) %}
 {% set postslistCounter = postsCount %}
 {% include "postslist.njk" %}
 
