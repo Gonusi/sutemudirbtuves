@@ -107,16 +107,30 @@ export default async function(eleventyConfig) {
 		return typeof item.inputPath === "string" && item.inputPath.startsWith(`./content/${subdir}/`);
 	};
 
+	const sortByDate = (items, newestFirst = true) => {
+		return [...items].sort((a, b) => {
+			const dateA = a.data?.date ? new Date(a.data.date).getTime() : 0;
+			const dateB = b.data?.date ? new Date(b.data.date).getTime() : 0;
+			return newestFirst ? dateB - dateA : dateA - dateB;
+		});
+	};
+
 	eleventyConfig.addCollection("tales", (collectionApi) => {
-		return collectionApi.getAll().filter((item) => isInContentSubdir(item, "tales"));
+		return sortByDate(
+			collectionApi.getAll().filter((item) => isInContentSubdir(item, "tales"))
+		);
 	});
 
 	eleventyConfig.addCollection("diaryEntries", (collectionApi) => {
-		return collectionApi.getAll().filter((item) => isInContentSubdir(item, "diary"));
+		return sortByDate(
+			collectionApi.getAll().filter((item) => isInContentSubdir(item, "diary"))
+		);
 	});
 
 	eleventyConfig.addCollection("maps", (collectionApi) => {
-		return collectionApi.getAll().filter((item) => isInContentSubdir(item, "maps"));
+		return sortByDate(
+			collectionApi.getAll().filter((item) => isInContentSubdir(item, "maps"))
+		);
 	});
 
 	eleventyConfig.addCollection("tagList", (collectionApi) => {
