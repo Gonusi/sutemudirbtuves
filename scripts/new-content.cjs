@@ -20,12 +20,21 @@ const availableTypes = Object.keys(roots);
 function printUsage() {
 	console.error("Usage: node scripts/new-content.cjs <tale|diary|map> [slug]");
 	console.error(`Available types: ${availableTypes.join(", ")}`);
+	console.error("Diary and map use current date (YYYY-MM-DD) as directory name; tale uses slug. Optional slug for map: date_slug.");
 }
 
 if (!type || !roots[type]) {
 	printUsage();
 	process.exit(1);
 }
+
+// Directory name: diary = date only; map = date_slug; tale = slug
+const dirName =
+	type === "diary"
+		? dateStr
+		: type === "map"
+			? `${dateStr}_${slug}`
+			: slug;
 
 const tagByType = {
 	tale: "tale",
@@ -45,12 +54,12 @@ lang: '${lang}'
 `;
 
 const root = roots[type];
-const dir = path.join(process.cwd(), root, slug);
+const dir = path.join(process.cwd(), root, dirName);
 const enPath = path.join(dir, "index.en.md");
 const ltPath = path.join(dir, "index.lt.md");
 
-if (fs.existsSync(enPath) || fs.existsSync(ltPath)) {
-	console.error(`Entry already exists: ${dir}`);
+if (fs.existsSync(dir)) {
+	console.error(`Error: Directory already exists: ${path.relative(process.cwd(), dir)}`);
 	process.exit(1);
 }
 
