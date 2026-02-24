@@ -13,19 +13,19 @@ Vakar toliau mokiausi senų vaikų knygų, "Naivaus" iliustracijos stiliaus – 
 
 Viršuje – galutinis rašalo ir akvarelės eskizas. Būčiau trukęs mažiau nei kelias valandas, jei viskas būtų pavykę, bet deja.
 
-![ ](./IMG_6052.jpeg)
+![ ](./IMG_6052.resized.jpg)
 Pradėjau ryte, tikėdamasis užbaigti eskizą dar iki antros kavos laiko iki pietų.
 
-![ ](./IMG_6064.jpeg)
+![ ](./IMG_6064.resized.jpg)
 Su pieštuku viskas kaip ir pavyko gerai, tada viską apibrėžiau rašalu.
 
-![ ](./IMG_6065.jpeg)
+![ ](./IMG_6065.resized.jpg)
 Dejan nepatikrinau, ar mano rašalas atsparus vandeniui (...), kas pakankamai neįtikėtina. Štai kas gavosi, kai bandžiau ant rašalo linijų dėti akvarelę.
 
-![ ](./IMG_6069.jpeg)
+![ ](./IMG_6069.resized.jpg)
 Supykęs jau vakare viską perpiešiau pieštuku. 
 
-![ ](./IMG_6071.jpeg)
+![ ](./IMG_6071.resized.jpg)
 Akvarelę tepiau tiesiai ant pieštuko. Po to, kai išdžiuvo, jau ant akvarelės užpiešiau rašalu – kaip ir pavyko, bet popierius įgavo tą įtrintą tekstūrą, kuri būna pigiam popieriui po vandens aplikacijos. Nuo to rašalas išsiliejo popieriuje ir linijos tapo labai storos – nebegalėjau nieko tiksliai piešti. 
 
 Trumpi užrašai apie mano pradinukines klaidas:

@@ -13,19 +13,19 @@ Yesterday I've continued learning the Naive illustration style of old childrens 
 
 Above is the final ink + watercolor sketch. It would have taken just a few hours if everything went right. It did not. 
 
-![ ](./IMG_6052.jpeg)
+![ ](./IMG_6052.resized.jpg)
 I started in the morning, hopeful to finish the sketch after my second coffee. 
 
-![ ](./IMG_6064.jpeg)
+![ ](./IMG_6064.resized.jpg)
 It all went well with the pencil, and I then traced them all with the fountain pen. 
 
-![ ](./IMG_6065.jpeg)
+![ ](./IMG_6065.resized.jpg)
 Despite reading for dozens of times that the default for ink is to not be waterproof, I never chekced. This was the result of me trying to apply watercolor on my ink lines.
 
-![ ](./IMG_6069.jpeg)
+![ ](./IMG_6069.resized.jpg)
 I then resketched everything again with a pencil. While tiresome, it actually was very good practice to do it twice in a day. 
 
-![ ](./IMG_6071.jpeg)
+![ ](./IMG_6071.resized.jpg)
 I applied watercolor directly on pencil. Then applied the ink on top after it dried, which kind of worked, except that the paper now had the ... rubbed in texture that happens to cheap paper after applying water. That made the ink expand and cause super thick lines, and I had to drop any fantasies of drawing precise stuff at this scale.
 
 
