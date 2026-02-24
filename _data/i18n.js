@@ -6,6 +6,7 @@ const messages = {
 			subtitle: "Pasakos vaikams, ir nevaikams. Apie mūsų kraštą, o kartais - ir tolimus kraštus."
 		},
 		nav: {
+			all: "Visi",
 			home: "Pasakos",
 			tales: "Pasakos",
 			maps: "Žemėlapiai",
@@ -26,6 +27,10 @@ const messages = {
 		},
 		archive: {
 			title: "Archyvas"
+		},
+		all: {
+			title: "Visi įrašai",
+			intro: "Pasakos, žemėlapiai ir dienoraščio įrašai – viskas vienoje vietoje."
 		},
 		tales: {
 			title: "Pasakos"
@@ -66,6 +71,7 @@ const messages = {
 			subtitle: "Tales from Lithuania, for children and those who are ...mostly grown up."
 		},
 		nav: {
+			all: "All",
 			home: "Tales",
 			tales: "Tales",
 			maps: "Maps",
@@ -84,6 +90,10 @@ const messages = {
 		},
 		archive: {
 			title: "Archive"
+		},
+		all: {
+			title: "All posts",
+			intro: "Tales, maps, and diary entries – everything in one place."
 		},
 		tales: {
 			title: "Tales"

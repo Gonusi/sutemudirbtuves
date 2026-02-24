@@ -115,22 +115,32 @@ export default async function(eleventyConfig) {
 		});
 	};
 
+	// Sort oldest-first so that postslist.njk's | reverse displays newest first
+	const sortOldestFirst = (items) => sortByDate(items, false);
+
 	eleventyConfig.addCollection("tales", (collectionApi) => {
-		return sortByDate(
+		return sortOldestFirst(
 			collectionApi.getAll().filter((item) => isInContentSubdir(item, "tales"))
 		);
 	});
 
 	eleventyConfig.addCollection("diaryEntries", (collectionApi) => {
-		return sortByDate(
+		return sortOldestFirst(
 			collectionApi.getAll().filter((item) => isInContentSubdir(item, "diary"))
 		);
 	});
 
 	eleventyConfig.addCollection("maps", (collectionApi) => {
-		return sortByDate(
+		return sortOldestFirst(
 			collectionApi.getAll().filter((item) => isInContentSubdir(item, "maps"))
 		);
+	});
+
+	eleventyConfig.addCollection("allEntries", (collectionApi) => {
+		const diaryItems = collectionApi.getAll().filter((item) => isInContentSubdir(item, "diary"));
+		const taleItems = collectionApi.getAll().filter((item) => isInContentSubdir(item, "tales"));
+		const mapItems = collectionApi.getAll().filter((item) => isInContentSubdir(item, "maps"));
+		return sortOldestFirst([...diaryItems, ...taleItems, ...mapItems]);
 	});
 
 	eleventyConfig.addCollection("tagList", (collectionApi) => {

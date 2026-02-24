@@ -1,0 +1,15 @@
+---js
+const eleventyNavigation = {
+	key: "all",
+	order: 0,
+	title: "nav.all"
+};
+
+const title = "all.title";
+const intro = "all.intro";
+---
+<h1>{{ t(title) }}</h1>
+<p>{{ t(intro) }}</p>
+
+{% set postslist = collections.allEntries or [] %}
+{% include "postslist.njk" %}
