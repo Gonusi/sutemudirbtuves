@@ -220,8 +220,14 @@ header {
 }
 
 /* Nav */
+nav {
+	flex: 1 1 auto;
+}
 .nav {
 	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	width: 100%;
 	padding: 0;
 	margin: 0;
 	list-style: none;
@@ -230,11 +236,19 @@ header {
 	display: inline-block;
 	margin-right: 1em;
 }
+.nav-item.nav-right {
+	margin-left: auto;
+	margin-right: 0;
+	white-space: nowrap;
+}
 .nav-item a[href]:not(:hover) {
 	text-decoration: none;
 }
 .nav a[href][aria-current="page"] {
 	text-decoration: underline;
+}
+.lang-switcher a[href][aria-current="page"] {
+	text-decoration: none;
 }
 
 /* Subscribe */

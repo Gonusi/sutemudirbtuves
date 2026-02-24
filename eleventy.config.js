@@ -3,10 +3,96 @@ import { feedPlugin } from "@11ty/eleventy-plugin-rss";
 import pluginSyntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 import pluginNavigation from "@11ty/eleventy-navigation";
 import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
+import fs from "fs";
+import path from "path";
 
 import pluginFilters from "./_config/filters.js";
 import getMetadata from "./_data/metadata.js";
 import { createI18n } from "./_data/i18n.js";
+
+// Key: absolute directory path  ->  Value: { lt?: url, en?: url }
+const translationMap = new Map();
+
+function parseSimpleFrontmatter(fileContent) {
+	const match = fileContent.match(/^---[\r\n]+([\s\S]*?)[\r\n]+---/);
+	if(!match) {
+		return {};
+	}
+
+	const result = {};
+	for(const line of match[1].split(/[\r\n]+/)) {
+		const parsed = line.match(/^(\w+):\s*(.*)$/);
+		if(parsed) {
+			result[parsed[1]] = parsed[2].trim().replace(/^['"]|['"]$/g, "");
+		}
+	}
+
+	return result;
+}
+
+function talesUrlFromFrontmatter(frontmatter, fileSlug) {
+	const rawTitle = typeof frontmatter.title === "string" && frontmatter.title.trim()
+		? frontmatter.title.trim()
+		: fileSlug;
+	const slugTitle = rawTitle ? rawTitle.replace(/\s+/g, "-").toLowerCase() : rawTitle;
+	const date = typeof frontmatter.date === "string" ? frontmatter.date.split("T")[0] : "";
+
+	if(!slugTitle || !date) {
+		return `/${slugTitle || "post"}/`;
+	}
+
+	return `/${slugTitle}_${date}/`;
+}
+
+function computeTranslatedUrl(inputDir, filePath, subdir, lang) {
+	const relativePath = path.relative(inputDir, filePath).replace(/\\/g, "/");
+
+	if(subdir === "tales") {
+		const fileContent = fs.readFileSync(filePath, "utf8");
+		const frontmatter = parseSimpleFrontmatter(fileContent);
+		return talesUrlFromFrontmatter(frontmatter, `index.${lang}`);
+	}
+
+	if(subdir === "diary") {
+		return `/${relativePath.replace(/\/index\.[^./]+\.md$/, "/")}`;
+	}
+
+	// maps keep /index.{lang}/ in current permalink structure
+	return `/${relativePath.replace(/\.md$/, "/")}`;
+}
+
+function buildTranslationMap(inputDir) {
+	translationMap.clear();
+
+	for(const subdir of ["tales", "diary", "maps"]) {
+		const subdirPath = path.join(inputDir, subdir);
+		if(!fs.existsSync(subdirPath)) {
+			continue;
+		}
+
+		for(const entry of fs.readdirSync(subdirPath, { withFileTypes: true })) {
+			if(!entry.isDirectory()) {
+				continue;
+			}
+
+			const dirPath = path.join(subdirPath, entry.name);
+			const urls = {};
+
+			for(const lang of ["lt", "en"]) {
+				const filePath = path.join(dirPath, `index.${lang}.md`);
+				if(!fs.existsSync(filePath)) {
+					continue;
+				}
+
+				urls[lang] = computeTranslatedUrl(inputDir, filePath, subdir, lang);
+			}
+
+			if(Object.keys(urls).length > 0) {
+				translationMap.set(dirPath, urls);
+			}
+		}
+	}
+}
 
 const defaultLang = "lt";
 const supportedLangs = new Set(["lt", "en"]);
@@ -18,13 +104,37 @@ const siteMetadata = getMetadata();
 export default async function(eleventyConfig) {
 	eleventyConfig.addNunjucksGlobal("t", (key, vars) => i18n.t(key, vars));
 
+	// Build translation URL mapping before each build/watch pass.
+	eleventyConfig.on("eleventy.before", ({ directories } = {}) => {
+		const rawInputDir = directories?.input || "content";
+		const inputDir = path.isAbsolute(rawInputDir)
+			? rawInputDir
+			: path.resolve(process.cwd(), rawInputDir);
+		buildTranslationMap(inputDir);
+	});
+
 	// Drafts/todos, see also _data/eleventyDataSchema.js
 	eleventyConfig.addPreprocessor("drafts", "*", (data, content) => {
 		const isDraft = data.draft || data.todo;
+		const inputPath = data.page?.inputPath || "";
 
 		if(data.lang && data.lang !== buildLang) {
 			data.eleventyExcludeFromCollections = true;
 			return false;
+		}
+
+		if(/\/content\/(tales|diary|maps)\//.test(inputPath)) {
+			const basename = path.basename(inputPath);
+			if(/^index\.(lt|en)\.md$/.test(basename)) {
+				const absoluteInputPath = path.resolve(process.cwd(), inputPath);
+				const dirPath = path.dirname(absoluteInputPath);
+				const otherLanguage = buildLang === "lt" ? "en" : "lt";
+				const urls = translationMap.get(dirPath);
+
+				if(urls && urls[otherLanguage]) {
+					data.translationUrl = urls[otherLanguage];
+				}
+			}
 		}
 
 		if(isDraft && process.env.ELEVENTY_RUN_MODE === "build") {

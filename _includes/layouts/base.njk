@@ -7,6 +7,10 @@
 		<title>{{ t(title or metadata.title, titleVars) }}</title>
 		<meta name="description" content="{{ description or metadata.description }}">
 		<link rel="alternate" href="feed/feed.xml" type="application/atom+xml" title="{{ metadata.title }}">
+		{%- set effectiveTranslationUrl = translationUrl or page.url %}
+		<link rel="alternate" hreflang="{{ metadata.language }}" href="{{ metadata.siteUrls[metadata.language] }}{{ page.url }}">
+		<link rel="alternate" hreflang="{{ metadata.otherLanguage }}" href="{{ metadata.siteUrls[metadata.otherLanguage] }}{{ effectiveTranslationUrl }}">
+		<link rel="alternate" hreflang="x-default" href="{{ metadata.siteUrls.en }}{% if metadata.language == 'en' %}{{ page.url }}{% else %}{{ effectiveTranslationUrl }}{% endif %}">
 
 		{#- Uncomment this if you’d like folks to know that you used Eleventy to build your site!  #}
 		{#- <meta name="generator" content="{{ eleventy.generator }}"> #}
@@ -62,6 +66,16 @@
 				{%- for entry in collections.all | eleventyNavigation %}
 					<li class="nav-item"><a href="{{ entry.url }}"{% if entry.url == page.url %} aria-current="page"{% endif %}>{{ t(entry.title) }}</a></li>
 				{%- endfor %}
+					<li class="nav-item nav-right">
+						<span class="lang-switcher">
+							{%- set effectiveTranslationUrl = translationUrl or page.url %}
+							{%- if metadata.language == "lt" %}
+								<strong>LT</strong> / <a href="{{ metadata.siteUrls.en }}{{ effectiveTranslationUrl }}">EN</a>
+							{%- else %}
+								<a href="{{ metadata.siteUrls.lt }}{{ effectiveTranslationUrl }}">LT</a> / <strong>EN</strong>
+							{%- endif %}
+						</span>
+					</li>
 				</ul>
 			</nav>
 		</header>
