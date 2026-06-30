@@ -7,6 +7,7 @@
 		<title>{{ t(title or metadata.title, titleVars) }}</title>
 		<meta name="description" content="{{ description or metadata.description }}">
 		<link rel="alternate" href="feed/feed.xml" type="application/atom+xml" title="{{ metadata.title }}">
+		<link rel="canonical" href="{{ metadata.siteUrls[metadata.language] }}{{ page.url }}">
 		{%- set effectiveTranslationUrl = translationUrl or page.url %}
 		<link rel="alternate" hreflang="{{ metadata.language }}" href="{{ metadata.siteUrls[metadata.language] }}{{ page.url }}">
 		<link rel="alternate" hreflang="{{ metadata.otherLanguage }}" href="{{ metadata.siteUrls[metadata.otherLanguage] }}{{ effectiveTranslationUrl }}">

@@ -7,6 +7,7 @@ import fs from "fs";
 import path from "path";
 
 import pluginFilters from "./_config/filters.js";
+import { getTalePermalink } from "./_config/urlSlug.js";
 import getMetadata from "./_data/metadata.js";
 import { createI18n } from "./_data/i18n.js";
 
@@ -31,17 +32,11 @@ function parseSimpleFrontmatter(fileContent) {
 }
 
 function talesUrlFromFrontmatter(frontmatter, fileSlug) {
-	const rawTitle = typeof frontmatter.title === "string" && frontmatter.title.trim()
-		? frontmatter.title.trim()
-		: fileSlug;
-	const slugTitle = rawTitle ? rawTitle.replace(/\s+/g, "-").toLowerCase() : rawTitle;
-	const date = typeof frontmatter.date === "string" ? frontmatter.date.split("T")[0] : "";
-
-	if(!slugTitle || !date) {
-		return `/${slugTitle || "post"}/`;
-	}
-
-	return `/${slugTitle}_${date}/`;
+	return getTalePermalink({
+		title: frontmatter.title,
+		date: frontmatter.date,
+		fallbackSlug: fileSlug || "post",
+	});
 }
 
 function computeTranslatedUrl(inputDir, filePath, subdir, lang) {

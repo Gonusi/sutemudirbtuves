@@ -2,7 +2,7 @@ import { createI18n } from "./i18n.js";
 
 const siteUrls = {
 	lt: "https://sutemudirbtuves.lt",
-	en: "https://twilightworkshop.com",
+	en: "https://twilightworkshop.lt",
 };
 
 export default function() {
