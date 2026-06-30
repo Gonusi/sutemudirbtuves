@@ -6,6 +6,7 @@ tags: ['tale', 'pasaka', 'siaubo', 'pabaisa', 'n-14']
 thumb:
 lang: 'lt'
 ---
+
 Tolimas griaustinis pažadino Arną iš sapno.
 
 Kambaryje buvo tamsu ir tvanku. Močiutės laikrodis ant sienos rodė antrą valandą dienos, bet jis visada rodė antrą — buvo sustojęs gal prieš penkerius metus. Naktis sunkėsi į kambarį pro senus medinius langų rėmus - it serbentų uogienė. Juoda, šilta, audros pritvinkusi birželio naktis.

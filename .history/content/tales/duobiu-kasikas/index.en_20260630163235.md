@@ -7,6 +7,8 @@ thumb:
 draft: false
 lang: 'en'
 ---
+
+
 *Note: this is an automatic translation from the lithuanian original, performed by ChatGPT 5.5. Use the language switcher at the top right to find the original.*
 
 A faraway thunderclap woke Arnas from sleep.
